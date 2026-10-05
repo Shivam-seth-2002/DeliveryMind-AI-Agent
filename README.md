@@ -17,7 +17,43 @@ An advanced, multi-agent AI system designed to intelligently analyze, synthesize
 
 The architecture seamlessly connects frontend queries through FastAPI into a sophisticated AI backend.
 
-![Architecture Diagram](./architecture_diagram.svg)
+```mermaid
+graph TD
+    %% Nodes
+    User(("🧑‍💼 1. Project Manager<br>(User)"))
+    API["🌐 2. FastAPI Gateway<br>(api.py)"]
+    Intake["🧠 3. Intake Agent<br>(Qwen 27B Classification)"]
+    Auth["🔐 4. RBAC & Security<br>(auth.py)"]
+    Orchestrator["🎯 5. Insight Orchestrator<br>(Semantic Kernel)"]
+    Retriever["🤖 6. Data Retriever<br>(AutoGen Assistant)"]
+    Tools[("🛠️ 7. FastMCP & Hybrid RAG<br>(DevOps, D365, SharePoint)")]
+    Scoring["🧮 8. Risk Scoring Engine"]
+    Report["📄 9. Final AI Report"]
+
+    %% Edges
+    User -- "Submits Query (e.g. Project Status)" --> API
+    API -- "Analyzes Query" --> Intake
+    Intake -- "Intent & Entities Resolved" --> Auth
+    Auth -- "Validates Permissions" --> Orchestrator
+    Orchestrator -- "Requests Missing Data" --> Retriever
+    Retriever -- "Executes Autonomous Tool Calls" --> Tools
+    Tools -- "Returns Raw JSON/Text" --> Retriever
+    Retriever -- "Synthesized Data Hand-off" --> Orchestrator
+    Orchestrator -- "Calculates Business Risk" --> Scoring
+    Scoring -- "Generates Summary" --> Report
+    Report -- "Delivers Insights" --> User
+
+    %% Styling for Recruiter Readability
+    classDef agent fill:#4a148c,stroke:#fff,stroke-width:2px,color:#fff,font-weight:bold;
+    classDef sys fill:#1565c0,stroke:#fff,stroke-width:2px,color:#fff,font-weight:bold;
+    classDef tool fill:#2e7d32,stroke:#fff,stroke-width:2px,color:#fff,font-weight:bold;
+    classDef userNode fill:#d84315,stroke:#fff,stroke-width:2px,color:#fff,font-weight:bold;
+
+    class Intake,Orchestrator,Retriever agent;
+    class API,Auth,Scoring,Report sys;
+    class Tools tool;
+    class User userNode;
+```
 
 ### The Core Flow (Request Lifecycle):
 1. **Intake & Intent Classification**: The `IntakeAgent` analyzes user queries to classify the intent (e.g., Project Status, Risk query) using Qwen 27B.
