@@ -1,0 +1,93 @@
+[
+  {
+    "projectId": "P-001",
+    "sprint": "Sprint 5",
+    "sprintStartDate": "2026-08-19",
+    "sprintEndDate": "2026-09-01",
+    "velocity": 45,
+    "totalStoryPoints": 50,
+    "completedStoryPoints": 45,
+    "bugsOpened": 2,
+    "bugsClosed": 3,
+    "blockers": 0,
+    "workItems": [
+      {"id": "WI-101", "title": "Build regional sales KPI page", "type": "User Story", "state": "Closed", "assignedTo": "John Doe"},
+      {"id": "WI-102", "title": "Implement date-range filter", "type": "User Story", "state": "Closed", "assignedTo": "Jane Smith"},
+      {"id": "WI-103", "title": "Executive summary tile layout", "type": "User Story", "state": "Active", "assignedTo": "John Doe"},
+      {"id": "WI-104", "title": "Fix tooltip rendering in bar chart", "type": "Bug", "state": "Closed", "assignedTo": "Jane Smith"},
+      {"id": "WI-105", "title": "DAX measure performance tuning", "type": "Task", "state": "Active", "assignedTo": "John Doe"}
+    ]
+  },
+  {
+    "projectId": "P-002",
+    "sprint": "Sprint 12",
+    "sprintStartDate": "2026-08-19",
+    "sprintEndDate": "2026-09-01",
+    "velocity": 20,
+    "totalStoryPoints": 45,
+    "completedStoryPoints": 20,
+    "bugsOpened": 15,
+    "bugsClosed": 4,
+    "blockers": 2,
+    "workItems": [
+      {"id": "WI-201", "title": "Customer segmentation model integration", "type": "User Story", "state": "Active", "assignedTo": "Alice Johnson"},
+      {"id": "WI-202", "title": "Azure SQL connection timeout errors", "type": "Bug", "state": "Active", "assignedTo": "Bob Brown"},
+      {"id": "WI-203", "title": "ETL pipeline failing on NULL values", "type": "Bug", "state": "Active", "assignedTo": "Alice Johnson"},
+      {"id": "WI-204", "title": "Blocked: Client API credential expired", "type": "Bug", "state": "Active", "assignedTo": "Bob Brown"},
+      {"id": "WI-205", "title": "Blocked: Staging environment down", "type": "Bug", "state": "Active", "assignedTo": "Alice Johnson"},
+      {"id": "WI-206", "title": "Campaign ROI dashboard wireframe", "type": "User Story", "state": "Closed", "assignedTo": "Bob Brown"}
+    ]
+  },
+  {
+    "projectId": "P-003",
+    "sprint": "Sprint 2",
+    "sprintStartDate": "2026-08-26",
+    "sprintEndDate": "2026-09-08",
+    "velocity": 38,
+    "totalStoryPoints": 40,
+    "completedStoryPoints": 38,
+    "bugsOpened": 1,
+    "bugsClosed": 1,
+    "blockers": 0,
+    "workItems": [
+      {"id": "WI-301", "title": "Synapse workspace provisioning", "type": "Task", "state": "Closed", "assignedTo": "Charlie Davis"},
+      {"id": "WI-302", "title": "GL account mapping data model", "type": "User Story", "state": "Closed", "assignedTo": "Charlie Davis"},
+      {"id": "WI-303", "title": "Row-level security prototype", "type": "User Story", "state": "Active", "assignedTo": "Charlie Davis"}
+    ]
+  },
+  {
+    "projectId": "P-004",
+    "sprint": "Sprint 4",
+    "sprintStartDate": "2026-08-19",
+    "sprintEndDate": "2026-09-01",
+    "velocity": 28,
+    "totalStoryPoints": 35,
+    "completedStoryPoints": 28,
+    "bugsOpened": 4,
+    "bugsClosed": 3,
+    "blockers": 1,
+    "workItems": [
+      {"id": "WI-401", "title": "Attrition prediction model visual", "type": "User Story", "state": "Active", "assignedTo": "Eva Martinez"},
+      {"id": "WI-402", "title": "Blocked: Dataverse API rate limit", "type": "Bug", "state": "Active", "assignedTo": "David Lee"},
+      {"id": "WI-403", "title": "Employee engagement survey import", "type": "User Story", "state": "Closed", "assignedTo": "Eva Martinez"},
+      {"id": "WI-404", "title": "Headcount trend DAX measure", "type": "Task", "state": "Closed", "assignedTo": "David Lee"}
+    ]
+  },
+  {
+    "projectId": "P-005",
+    "sprint": "Sprint 1",
+    "sprintStartDate": "2026-08-26",
+    "sprintEndDate": "2026-09-08",
+    "velocity": 15,
+    "totalStoryPoints": 20,
+    "completedStoryPoints": 15,
+    "bugsOpened": 0,
+    "bugsClosed": 0,
+    "blockers": 0,
+    "workItems": [
+      {"id": "WI-501", "title": "ADF pipeline architecture design", "type": "Task", "state": "Closed", "assignedTo": "Frank Wilson"},
+      {"id": "WI-502", "title": "Inventory data source onboarding", "type": "User Story", "state": "Active", "assignedTo": "Grace Kim"},
+      {"id": "WI-503", "title": "Vendor SLA KPI definition", "type": "User Story", "state": "Active", "assignedTo": "Frank Wilson"}
+    ]
+  }
+]

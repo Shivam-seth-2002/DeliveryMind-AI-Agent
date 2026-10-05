@@ -1,0 +1,115 @@
+trigger:
+  branches:
+    include:
+      - main
+      - dev
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  pythonVersion: '3.10'
+
+stages:
+# ── Stage 1: Build, Lint, and Test (Dev) ──
+- stage: BuildAndTest
+  displayName: 'Build, Lint & Test (Dev)'
+  jobs:
+  - job: Build
+    displayName: 'Build & Validate'
+    steps:
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '$(pythonVersion)'
+      displayName: 'Use Python $(pythonVersion)'
+
+    - script: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+      displayName: 'Install dependencies'
+
+    - script: |
+        pip install flake8
+        flake8 src/ --count --select=E9,F63,F7,F82 --show-source --statistics
+        flake8 src/ --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+      displayName: 'Lint with flake8'
+
+    - script: |
+        pip install pytest
+        pytest tests/ -v --tb=short --junitxml=test-results.xml
+      displayName: 'Run unit tests'
+
+    - task: PublishTestResults@2
+      inputs:
+        testResultsFiles: 'test-results.xml'
+        testRunTitle: 'Python Unit Tests'
+      condition: succeededOrFailed()
+      displayName: 'Publish test results'
+
+    - task: ArchiveFiles@2
+      inputs:
+        rootFolderOrFile: '$(Build.SourcesDirectory)'
+        includeRootFolder: false
+        archiveType: 'zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/delivery-agent-$(Build.BuildId).zip'
+      displayName: 'Archive build artifacts'
+
+    - task: PublishBuildArtifacts@1
+      inputs:
+        pathToPublish: '$(Build.ArtifactStagingDirectory)'
+        artifactName: 'delivery-agent'
+      displayName: 'Publish build artifacts'
+
+# ── Stage 2: Deploy to Test Environment ──
+- stage: DeployToTest
+  displayName: 'Deploy to Test Environment'
+  dependsOn: BuildAndTest
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/dev'))
+  jobs:
+  - deployment: DeployTest
+    displayName: 'Deploy to Test'
+    environment: 'test'
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - script: |
+              echo "Deploying to Azure App Service (Test Environment)..."
+              echo "Build ID: $(Build.BuildId)"
+              # STEP UP: az webapp deployment source config-zip \
+              #   -g delivery-agent-rg \
+              #   -n delivery-agent-test \
+              #   --src $(Pipeline.Workspace)/delivery-agent/delivery-agent-$(Build.BuildId).zip
+            displayName: 'Deploy Backend API to Test'
+
+          - script: |
+              echo "Running smoke tests against Test environment..."
+              # STEP UP: curl -f https://delivery-agent-test.azurewebsites.net/api/health
+            displayName: 'Smoke Test'
+
+# ── Stage 3: Promote to Production (Manual Approval) ──
+- stage: PromoteToProduction
+  displayName: 'Promote to Production'
+  dependsOn: DeployToTest
+  condition: succeeded()
+  jobs:
+  - deployment: DeployProd
+    displayName: 'Deploy to Production'
+    environment: 'production'
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - script: |
+              echo "Deploying to Azure App Service (Production)..."
+              echo "Build ID: $(Build.BuildId)"
+              # STEP UP: az webapp deployment source config-zip \
+              #   -g delivery-agent-rg \
+              #   -n delivery-agent-prod \
+              #   --src $(Pipeline.Workspace)/delivery-agent/delivery-agent-$(Build.BuildId).zip
+            displayName: 'Deploy Backend API to Production'
+
+          - script: |
+              echo "Running production health check..."
+              # STEP UP: curl -f https://delivery-agent-prod.azurewebsites.net/api/health
+            displayName: 'Production Health Check'

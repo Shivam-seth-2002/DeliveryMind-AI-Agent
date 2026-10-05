@@ -1,0 +1,27 @@
+projectId,resourceName,role,weekEnding,hoursLogged,budgetedHours,costActual,costBudget
+P-001,John Doe,Senior Developer,2026-08-23,40,40,4000,4000
+P-001,John Doe,Senior Developer,2026-08-30,40,40,4000,4000
+P-001,Jane Smith,BI Developer,2026-08-23,40,40,4000,4000
+P-001,Jane Smith,BI Developer,2026-08-30,38,40,3800,4000
+P-001,Sam Wilson,QA Analyst,2026-08-23,20,20,1500,1500
+P-001,Sam Wilson,QA Analyst,2026-08-30,22,20,1700,1500
+P-002,Alice Johnson,Lead Developer,2026-08-23,50,40,7500,6000
+P-002,Alice Johnson,Lead Developer,2026-08-30,55,40,8250,6000
+P-002,Bob Brown,Data Engineer,2026-08-23,45,40,5400,4800
+P-002,Bob Brown,Data Engineer,2026-08-30,50,40,6000,4800
+P-002,Carol White,BI Developer,2026-08-23,40,40,4000,4000
+P-002,Carol White,BI Developer,2026-08-30,42,40,4200,4000
+P-003,Charlie Davis,Architect,2026-08-23,25,30,3750,4500
+P-003,Charlie Davis,Architect,2026-08-30,28,30,4200,4500
+P-003,Diana Frost,BI Developer,2026-08-23,20,25,2000,2500
+P-003,Diana Frost,BI Developer,2026-08-30,18,25,1800,2500
+P-004,Eva Martinez,BI Developer,2026-08-23,38,35,3800,3500
+P-004,Eva Martinez,BI Developer,2026-08-30,40,35,4000,3500
+P-004,David Lee,Data Analyst,2026-08-23,35,35,2800,2800
+P-004,David Lee,Data Analyst,2026-08-30,36,35,2880,2800
+P-005,Frank Wilson,Data Engineer,2026-08-23,15,20,2250,3000
+P-005,Frank Wilson,Data Engineer,2026-08-30,18,20,2700,3000
+P-005,Grace Kim,BI Developer,2026-08-23,12,20,1200,2000
+P-005,Grace Kim,BI Developer,2026-08-30,16,20,1600,2000
+P-005,Hank Torres,PM,2026-08-23,10,10,2000,2000
+P-005,Hank Torres,PM,2026-08-30,10,10,2000,2000

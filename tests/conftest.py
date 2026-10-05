@@ -1,0 +1,6 @@
+"""Shared test fixtures for the Intelligent Client Delivery Agent test suite."""
+import sys
+import os
+
+# Ensure src is importable
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))

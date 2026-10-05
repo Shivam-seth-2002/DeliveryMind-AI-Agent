@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligent Client Delivery Agent — MAQ Software</title>
+    <meta name="description" content="AI-powered multi-agent system for monitoring Power BI delivery project health across SharePoint, Azure DevOps, and D365.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Ambient Glow Effects -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    <div class="glow glow-3"></div>
+
+    <div class="app-shell">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <div class="logo-mark">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                    </svg>
+                </div>
+                <span class="logo-label">Delivery<br>Intelligence</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" id="nav-agent" title="Agent Chat">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    <span>Agent</span>
+                </a>
+                <a href="#" class="nav-item" id="nav-sources" title="Data Sources">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+                    <span>Sources</span>
+                </a>
+                <a href="#" class="nav-item" id="nav-arch" title="Architecture">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                    <span>Arch</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-chip">
+                    <div class="user-avatar">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name" id="user-display-name">Delivery Manager</span>
+                        <span class="user-role" id="user-id-display">mgr123</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <div class="header-title">
+                    <h1>Intelligent Client Delivery Agent</h1>
+                    <div class="header-badges">
+                        <span class="badge badge-sk">Semantic Kernel</span>
+                        <span class="badge badge-rag">Hybrid RAG</span>
+                        <span class="badge badge-mcp">FastMCP</span>
+                        <span class="badge badge-autogen">AutoGen</span>
+                    </div>
+                </div>
+                <div class="header-status">
+                    <div class="status-dot"></div>
+                    <span>Agent Online</span>
+                </div>
+            </header>
+
+            <!-- Agent Chat View -->
+            <div class="view-panel active" id="view-agent">
+                <div class="chat-area" id="chat-area">
+                    <!-- Welcome Card -->
+                    <div class="welcome-card" id="welcome-card">
+                        <div class="welcome-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                                <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7v1H3v-1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2z"></path>
+                                <rect x="3" y="15" width="18" height="6" rx="2"></rect>
+                                <line x1="7" y1="18" x2="7" y2="18"></line>
+                                <line x1="12" y1="18" x2="12" y2="18"></line>
+                                <line x1="17" y1="18" x2="17" y2="18"></line>
+                            </svg>
+                        </div>
+                        <h2>Multi-Agent Delivery Intelligence</h2>
+                        <p>I orchestrate multiple AI agents to analyze your Power BI delivery project portfolio across <strong>SharePoint</strong>, <strong>Azure DevOps</strong>, and <strong>D365</strong> data sources.</p>
+
+                        <div class="quick-actions">
+                            <button class="quick-btn" data-query="What is the health of our active Power BI delivery projects?">
+                                <span class="quick-icon">🏢</span>
+                                Portfolio Overview
+                            </button>
+                            <button class="quick-btn" data-query="What is the health of Project Beta?">
+                                <span class="quick-icon">📊</span>
+                                Project Beta Health
+                            </button>
+                            <button class="quick-btn" data-query="Which projects are at risk?">
+                                <span class="quick-icon">⚠️</span>
+                                At-Risk Projects
+                            </button>
+                        </div>
+                        <div class="quick-actions" style="margin-top: 10px;">
+                            <button class="quick-btn" data-query="What is the budget status for Project Alpha?">
+                                <span class="quick-icon">💰</span>
+                                Alpha Budget
+                            </button>
+                            <button class="quick-btn" data-query="Show me the sprint velocity for Project Gamma">
+                                <span class="quick-icon">🏃</span>
+                                Gamma Sprint
+                            </button>
+                            <button class="quick-btn" data-query="Tell me about Project Delta">
+                                <span class="quick-icon">🔍</span>
+                                Project Delta
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="chat-messages"></div>
+                </div>
+
+                <div class="input-area">
+                    <form id="chat-form">
+                        <div class="input-wrapper">
+                            <input type="text" id="query-input" placeholder="Ask your delivery agent..." autocomplete="off" required>
+                            <button type="submit" id="send-btn" aria-label="Send message">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="input-hint">Press Enter to send · The agent will analyze data across all connected sources</div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Sources View -->
+            <div class="view-panel" id="view-sources">
+                <div class="sources-page">
+                    <div class="sources-header">
+                        <h2>Connected Data Sources</h2>
+                        <p>The agent orchestrates these data sources in real-time to generate health reports.</p>
+                    </div>
+
+                    <div class="sources-grid">
+                        <!-- SharePoint -->
+                        <div class="source-card">
+                            <div class="source-card-header">
+                                <div class="source-icon sp">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                </div>
+                                <div class="source-status-badge online">Connected</div>
+                            </div>
+                            <h3>SharePoint Project Pages</h3>
+                            <p>Local JSON export of project metadata including names, managers, clients, timelines, technologies, and descriptions.</p>
+                            <div class="source-meta">
+                                <div class="meta-item">
+                                    <span class="meta-label">Format</span>
+                                    <span class="meta-value">JSON</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-label">Projects</span>
+                                    <span class="meta-value">5 active</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-label">Agent</span>
+                                    <span class="meta-value">Data Retrieval</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Azure DevOps -->
+                        <div class="source-card">
+                            <div class="source-card-header">
+                                <div class="source-icon devops">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                                </div>
+                                <div class="source-status-badge online">Connected</div>
+                            </div>
+                            <h3>Azure DevOps Sprint Data</h3>
+                            <p>Sprint metrics served via <strong>FastMCP tool server</strong> (5 tools). Includes velocity, bugs, blockers, work items, and burndown.</p>
+                            <div class="source-meta">
+                                <div class="meta-item">
+                                    <span class="meta-label">Protocol</span>
+                                    <span class="meta-value">MCP (FastMCP)</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-label">Sprints</span>
+                                    <span class="meta-value">5 tracked</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-label">MCP Tools</span>
+                                    <span class="meta-value">5 registered</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- D365 -->
+                        <div class="source-card">
+                            <div class="source-card-header">
+                                <div class="source-icon d365">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                                </div>
+                                <div class="source-status-badge online">Connected</div>
+                            </div>
+                            <h3>D365 Project Operations</h3>
+                            <p>Financial timesheet data including hours logged, budgeted hours, actual costs, budget tracking, roles, and weekly entries.</p>
+                            <div class="source-meta">
+                                <div class="meta-item">
+                                    <span class="meta-label">Format</span>
+                                    <span class="meta-value">CSV</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-label">Resources</span>
+                                    <span class="meta-value">10 tracked</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-label">Agent</span>
+                                    <span class="meta-value">Data Retrieval</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ChromaDB + BM25 -->
+                        <div class="source-card">
+                            <div class="source-card-header">
+                                <div class="source-icon rag">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                                </div>
+                                <div class="source-status-badge online">Connected</div>
+                            </div>
+                            <h3>Hybrid RAG Vector Store</h3>
+                            <p>ChromaDB semantic search + LlamaIndex BM25 keyword search fused via Reciprocal Rank Fusion (RRF).</p>
+                            <div class="source-meta">
+                                <div class="meta-item">
+                                    <span class="meta-label">Embeddings</span>
+                                    <span class="meta-value">all-MiniLM-L6-v2</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-label">Documents</span>
+                                    <span class="meta-value" id="rag-doc-count">—</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-label">Agent</span>
+                                    <span class="meta-value">AutoGen</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Architecture View -->
+            <div class="view-panel" id="view-arch">
+                <div class="sources-page">
+                    <div class="sources-header">
+                        <h2>Agent Architecture</h2>
+                        <p>End-to-end multi-agent pipeline for delivery intelligence.</p>
+                    </div>
+
+                    <div class="arch-flow">
+                        <div class="arch-node intake">
+                            <div class="arch-node-icon">🔐</div>
+                            <div class="arch-node-label">Auth Service</div>
+                            <div class="arch-node-sub">Simulated Entra ID RBAC</div>
+                        </div>
+                        <div class="arch-arrow">→</div>
+                        <div class="arch-node intake">
+                            <div class="arch-node-icon">💬</div>
+                            <div class="arch-node-label">Intake Agent</div>
+                            <div class="arch-node-sub">Pro-Code NLP Classifier</div>
+                        </div>
+                        <div class="arch-arrow">→</div>
+                        <div class="arch-node retrieval">
+                            <div class="arch-node-icon">🔎</div>
+                            <div class="arch-node-label">Data Retrieval Agent</div>
+                            <div class="arch-node-sub">AutoGen + Hybrid RAG + MCP</div>
+                        </div>
+                        <div class="arch-arrow">→</div>
+                        <div class="arch-node orchestrator">
+                            <div class="arch-node-icon">🧠</div>
+                            <div class="arch-node-label">Insight Orchestrator</div>
+                            <div class="arch-node-sub">Semantic Kernel + Risk Algo</div>
+                        </div>
+                        <div class="arch-arrow">→</div>
+                        <div class="arch-node report">
+                            <div class="arch-node-icon">📋</div>
+                            <div class="arch-node-label">Report Generator</div>
+                            <div class="arch-node-sub">Markdown + HTML + Trace</div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 32px;">
+                        <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.2rem; margin-bottom: 16px;">Technology Stack</h3>
+                        <div class="sources-grid">
+                            <div class="source-card">
+                                <h3>Free/OSS Stack</h3>
+                                <p>
+                                    • <strong>Semantic Kernel</strong> — Orchestration<br>
+                                    • <strong>AutoGen</strong> — Agent framework<br>
+                                    • <strong>LlamaIndex</strong> — BM25 retrieval<br>
+                                    • <strong>ChromaDB</strong> — Vector store<br>
+                                    • <strong>HuggingFace</strong> — Embeddings<br>
+                                    • <strong>FastMCP</strong> — Tool protocol<br>
+                                    • <strong>FastAPI</strong> — API server
+                                </p>
+                            </div>
+                            <div class="source-card">
+                                <h3>Step Up (Production)</h3>
+                                <p>
+                                    • AutoGen → <strong>Azure AI Foundry</strong><br>
+                                    • ChromaDB → <strong>Azure AI Search</strong><br>
+                                    • HuggingFace → <strong>Azure OpenAI</strong><br>
+                                    • Simulated Auth → <strong>Entra ID</strong><br>
+                                    • File logs → <strong>App Insights</strong><br>
+                                    • Local deploy → <strong>Azure App Service</strong>
+                                </p>
+                            </div>
+                            <div class="source-card">
+                                <h3>DevOps & CI/CD</h3>
+                                <p>
+                                    • <strong>Azure Pipelines</strong> (free tier)<br>
+                                    • 3 stages: Dev → Test → Prod<br>
+                                    • Lint (flake8) + Unit tests (pytest)<br>
+                                    • Artifact publishing<br>
+                                    • Manual approval for production<br>
+                                    • <strong>Application Insights</strong> telemetry
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
